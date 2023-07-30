@@ -1,0 +1,89 @@
+/* Base styles for all screen sizes */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+}
+
+h1 {
+  text-align: center;
+  color: black;
+  border-bottom: 2px solid orangered;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 2px solid lightsalmon;
+  border-radius: 8px;
+  padding: 25px;
+  margin: 0 auto;
+  width: 90%;
+  height: 90%;
+  max-width: 18rem;
+  height: 18rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+  border: 2px solid black;
+  background-color: lightgoldenrodyellow;
+  border-radius: 5px;
+  animation: 2s hideCard linear;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  opacity: 0;
+  animation: 2s hideImage linear;
+}
+
+.card.active {
+  transform: rotateY(0);
+}
+
+.card.active img {
+  opacity: 1;
+}
+
+.unmatch {
+  background-color: lightcoral;
+  border-radius: 5px;
+  animation: 2s hideCard linear;
+}
+
+/* Add a hover effect to the cards */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem; /* Decrease font size for mobile */
+  }
+
+  .container {
+    max-width: 20rem; /* Adjust maximum width for mobile */
+    height: 23rem; /* Adjust height for mobile */
+    grid-template-columns: repeat(4, 1fr); /* Use 3 columns for mobile */
+    grid-template-rows: repeat(6, 1fr); /* Use 6 rows for mobile */
+  }
+}
